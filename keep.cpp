@@ -8,7 +8,7 @@ int main(int argc, char** argv)
 	char* pass = argv[3];
 	char* path = argv[4];
 
-	string command = "java -jar PassKeeper.jar ";
+	string command = "java -jar KeepPass.jar ";
 	command = command + url + " ";
 	command = command + user + " ";
 	command = command + pass + " ";
