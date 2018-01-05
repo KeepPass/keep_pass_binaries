@@ -1,8 +1,19 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
+
+int i = 0;
+
 int main(int argc, char** argv)
 {
+	if(i >= 3)
+	{
+		cout << "Maximum password attempts surpassed." << endl;
+		exit(0);
+	}else if(i <= 3)
+	{
+		i = i + 1;
+	}
 	char* url = argv[1];
 	char* user = argv[2];
 	char* pass = argv[3];
@@ -14,12 +25,16 @@ int main(int argc, char** argv)
 	command = command + pass + " ";
 	command = command + path + " ";
 	
-	string confirmation = cin << "Confirm password: " << endl;
-	if((confirmation == pass) != true)
+
+	cout << "Confirm password: ";
+	string confirm = "";
+	cin >> confirm;
+
+	if((confirm == pass) == false)
 	{
-		cout << "Password and confirmation do not match!" << endl;
+		cout << "Password & confirmation does not match" << endl;
 		main(argc, argv);
 	}
-	
+
 	system((command).c_str());
 }
