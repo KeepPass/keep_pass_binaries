@@ -13,6 +13,13 @@ int main(int argc, char** argv)
 	command = command + user + " ";
 	command = command + pass + " ";
 	command = command + path + " ";
-
+	
+	string confirmation = cin << "Confirm password: " << endl;
+	if((confirmation == pass) != true)
+	{
+		cout << "Password and confirmation do not match!" << endl;
+		main(argc, argv);
+	}
+	
 	system((command).c_str());
 }
